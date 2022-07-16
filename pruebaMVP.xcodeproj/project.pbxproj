@@ -16,6 +16,7 @@
 		55583ACF2883527B003A1A64 /* pruebaMVPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55583ACE2883527B003A1A64 /* pruebaMVPUITestsLaunchTests.swift */; };
 		55583ADF2883534B003A1A64 /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55583ADE2883534B003A1A64 /* UsersPresenter.swift */; };
 		55583AE128835364003A1A64 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55583AE028835364003A1A64 /* UsersViewController.swift */; };
+		55583AE528835E32003A1A64 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55583AE428835E32003A1A64 /* UsersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		55583ACE2883527B003A1A64 /* pruebaMVPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pruebaMVPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		55583ADE2883534B003A1A64 /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		55583AE028835364003A1A64 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		55583AE428835E32003A1A64 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				55583ADE2883534B003A1A64 /* UsersPresenter.swift */,
 				55583AE028835364003A1A64 /* UsersViewController.swift */,
+				55583AE428835E32003A1A64 /* UsersView.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55583AE528835E32003A1A64 /* UsersView.swift in Sources */,
 				55583ADF2883534B003A1A64 /* UsersPresenter.swift in Sources */,
 				55583AE128835364003A1A64 /* UsersViewController.swift in Sources */,
 				55583AAC28835279003A1A64 /* AppDelegate.swift in Sources */,
