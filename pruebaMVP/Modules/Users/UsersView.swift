@@ -7,7 +7,19 @@
 
 import UIKit
 
+protocol UsersViewDelegate: AnyObject {
+    func didClick()
+}
+
 class UsersView: UIView {
+    
+    private var firstButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Click", for: .normal)
+        button.backgroundColor = .red
+        return button
+    }()
     
     private var titleLabel: UILabel = {
         let label = UILabel()
@@ -17,9 +29,13 @@ class UsersView: UIView {
         return label
     }()
     
+    weak var delegate: UsersViewDelegate?
+    
     init() {
         super.init(frame: CGRect.zero)
         addConstraints()
+        addActions()
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
@@ -29,11 +45,30 @@ class UsersView: UIView {
     private func addConstraints() {
         addSubview(titleLabel)
         let titleConstraints = [
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
         ]
         NSLayoutConstraint.activate(titleConstraints)
+        
+        addSubview(firstButton)
+        let buttonConstraints = [
+            firstButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32),
+            firstButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            firstButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            firstButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16)
+        ]
+        NSLayoutConstraint.activate(buttonConstraints)
     }
+    
+    private func addActions() {
+        firstButton.addTarget(self, action: #selector(didClick), for: .touchUpInside)
+    }
+    
+    @objc private func didClick(sender: UIButton!) {
+        delegate?.didClick()
+    }
+    
+    
 }
+    

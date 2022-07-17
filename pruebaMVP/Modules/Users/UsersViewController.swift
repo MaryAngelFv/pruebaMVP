@@ -11,8 +11,14 @@ class UsersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = UsersView()
+        let userView = UsersView()
+        userView.delegate = self
+        view = userView
     }
-    
+}
 
+extension UsersViewController: UsersViewDelegate {
+    func didClick() {
+        print("Hiciste click")
+    }
 }
